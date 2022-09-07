@@ -1,7 +1,13 @@
 
+<section>
 
+    <article>
 
-<h1>Single Listing </h1>
 <h2>{{$listing['title']}}</h2>
-<h3>{{'Post ID: '. $listing ['id'] }//} </h3>
+<h3>{{'Post ID: '. $listing ['id'] }} </h3>
 <p>{{ $listing['description'] }}</p>
+
+    </article>
+
+    <a href="../listings" >Go Back</a>
+</section>

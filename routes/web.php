@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Listing;
 
+
+Route::get('/', function() {
+    return view('home');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

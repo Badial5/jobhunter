@@ -15,7 +15,8 @@
         {{$listing['title']}} </a>
     
     </h2>
-    <h3>{{'Post ID: '. $listing ['id'] }} </h3>
+    
+    <h3>{{'Post ID: '. $listing['id'] }} </h3>
     <p>{{ $listing['description'] }}</p>
 
 @endforeach
