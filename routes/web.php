@@ -1,14 +1,15 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Listing;
 
 
-Route::get('/', function() {
-    return view('home');
-});
+// Route::get('/', function() {
+//     return view('home');
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,14 @@ Route::get('/', function() {
 |
 */
 
-
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing  
 
 
 // Route::get('/hello', function() {
@@ -39,17 +47,19 @@ Route::get('/', function() {
 // })->where('id', '[0-9]+');
 
 //For all the Listing this one will run -Fectch all Listings
-Route::get('/listings', function() {
-    return view('listings', [
-        'heading' => 'Latest Listings',
-        'listings' => Listing::all()
-    ]);
-});
+// All Listings
+Route::get('/', [ListingController::class, 'index']);
+
+
+//show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
 
 
 //For single listing this one will run -Fetch Single Listing
-Route::get('/listings/{id}', function($id) {
-    return view('listing', [
-        'listing' => Listing::find($id)
-    ]);
-});
+// Store Listing Data
+Route::post('/listings', [ListingController::class, 'store']);
+
+    
+// Single Listing
+Route::get('/listings/{listing}', [ListingController::class, 'show']);

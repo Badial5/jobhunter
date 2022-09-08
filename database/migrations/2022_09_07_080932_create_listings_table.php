@@ -23,8 +23,7 @@ return new class extends Migration
             $table->string('website');
             $table->longText('description');
             $table->timestamps();
-            //$table->timestamp('created_at')->default(0);
-            //$table->timestamp('updated_at')->default(0);
+            
         });
     }
 
